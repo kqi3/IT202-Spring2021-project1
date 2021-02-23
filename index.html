@@ -176,6 +176,18 @@
  
                      ul.appendChild(li);
                      document.querySelector("#results").appendChild(ul);
+                   // Add markers and infowindow to google map
+                   let contentString = i.community_area_name+"-"+i.pin+"<br>"+i.address+"-"+i.sq_ft+"<br>"+i.pin;
+                     let lat = i.latitude;
+                     let lng = i.longitude;
+                     let marker = new google.maps.Marker({
+                          position: { lat: parseFloat(lat), lng: parseFloat(lng) },
+                          map: map,
+                        });
+                     let infowindow = new google.maps.InfoWindow(
+                     {
+                        content: contentString,
+                     } );
     
       function openPage(pageName, elmnt, color) {
           
