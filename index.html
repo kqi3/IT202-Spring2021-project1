@@ -188,7 +188,18 @@
                      {
                         content: contentString,
                      } );
-    
+                //Add the marker event listeners , one is click event and open infowindow, the other one is mouseout and close the infowindow
+                     marker.addListener("click", () => {
+                            infowindow.open(map, marker);
+                     });
+                     marker.addListener("mouseout",(e)=>{
+                           infowindow.close(e.target);
+                     });
+                         }
+                 
+            }) 
+
+      } );
       function openPage(pageName, elmnt, color) {
           
           var i, tabcontent, tablinks;
