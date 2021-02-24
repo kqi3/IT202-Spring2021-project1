@@ -137,7 +137,7 @@
        let endpoint = "https://data.cityofchicago.org/resource/aksk-kvfp.json";
 
       document.querySelector("#search").addEventListener("click", (e) => {
-          
+          // The  code below is create new google map constructor when every time search button clicked, and  it will create new google map and delete all old markers when  new ward number input
            map = new google.maps.Map(document.querySelector("#map"),{
               center: { lat:41.8781, lng: -87.6298}, //Center is Chicago 
               zoom:10,                               // Zoom big number means near look, small number means far look
@@ -148,7 +148,7 @@
           let ward_num = fd.get("ward");        
           let url = endpoint +  "?ward=" + ward_num.toString(); 
           var script = document.createElement('script');
-          script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDiCFska1MKttQahRlj3fYYpnNJTmJOrZI&callback=initMap';
+          script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDiCFska1MKttQahRlj3fYYpnNJTmJOrZI&callback=initMap'; //This is data api from City of Chicago
           script.async = true;
           
           //Get search fetch result from City of Chicago Data API json file
@@ -200,6 +200,7 @@
             }) 
 
       } );
+      // Hidding some tabs and change some tab background color and show default tab when page loaded.
       function openPage(pageName, elmnt, color) {
           
           var i, tabcontent, tablinks;
