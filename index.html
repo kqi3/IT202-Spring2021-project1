@@ -42,32 +42,32 @@
 //          map.removeOverlay(markers[i]);
 //        }
           //google.maps.event.trigger(map, 'resize');
-          fetch(url)
-          .then((response)=> { return response.json()})
-          .then((lands) =>{
-              lands.forEach( (land)=>{
-                //let contentString = land.community_area_name;
+//           fetch(url)
+//           .then((response)=> { return response.json()})
+//           .then((lands) =>{
+//               lands.forEach( (land)=>{
+//                 //let contentString = land.community_area_name;
                   
-                let marker = new google.maps.Marker({
-                  position: { lat: parseFloat(land.latitude), lng: parseFloat(land.longitude) },
-                  map: map,
-                });
+//                 let marker = new google.maps.Marker({
+//                   position: { lat: parseFloat(land.latitude), lng: parseFloat(land.longitude) },
+//                   map: map,
+//                 });
                   
-                  //End marker
-                //Create info window 
+//                   //End marker
+//                 //Create info window 
                 
                 
                
-               // markers.push(marker);
-               // marker.setMap(null);
-              })
-          })
+//                // markers.push(marker);
+//                // marker.setMap(null);
+//               })
+//           })
           
       } 
-     
-     window.addEventListener('load', () => { 
-             initMap();
-    });
+     //This is important code below for google map run after everything  DOM loaded
+    // window.addEventListener('load', () => { 
+       //      initMap();
+    //});
     </script>
 
   </head>
